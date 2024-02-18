@@ -1,0 +1,16 @@
+[Unit]
+Discription=NAD Power Control
+After=beocreate2.service
+StartLimitIntervalSec=0
+
+[Service]
+Restart=always
+RestartSec=2
+ExecStart=/usr/bin/nad-power-control
+
+[Timer]
+OnBootSec=5
+OnUnitInactiveSec=1s
+
+[Install]
+WantedBy=multi-user.target
